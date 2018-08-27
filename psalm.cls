@@ -94,21 +94,24 @@
 \catcode`|=\active
 \newcommand{|}{\textbar}
 
-% dot for change of note (use instead of space between words)
-\catcode`_=\active
-\newcommand{_}{\hspace{0.15em}$\vcenter{\hbox{\tiny$\bullet$}}$\hspace{0.15em}}
-
 % p*ause between words
-\newcommand{\ps}{*\space\space}
+\catcode`^=\active
+\newcommand{^}{*\space\space}
+
+% dot for change of note (use instead of space between words)
+\catcode`*=\active
+\newcommand{*}{\hspace{0.15em}$\vcenter{\hbox{\tiny$\bullet$}}$\hspace{0.15em}}
+
+% colon at midpoint of verse
+\newcommand{\textcolon}{:}
+\catcode`:=\active
+\newcommand{:}{\space\textcolon}
 
 % dynamics style
 \newcommand{\dyn}[1]{\textbf{\textit{#1}}}
 
 % dot above letter to denote syllable
 \newcommand{\syl}[1]{\.{#1}}
-
-% colon at midpoint of verse
-\newcommand{\q}{\thinspace :}
 
 % arrow to continue
 \newcommand{\continue}{\textrightarrow}
