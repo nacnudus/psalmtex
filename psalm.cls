@@ -17,15 +17,17 @@
 
 % HORIZONTAL SPACING
 
+\setlength{\tabcolsep}{0pt}
+
 \setlength\parindent{0pt}
 
 % amount of space for notes e.g. dynamics p mp mf f cresc. dim.
 \newlength\notesamount
-\setlength\notesamount{2.5em}
+\setlength\notesamount{4em}
 
 % amount of space for verse numbers
 \newlength\versenumamount
-\setlength\versenumamount{1.5em}
+\setlength\versenumamount{2em}
 
 % amount to indent second half of each verse
 \newlength\indentamount
@@ -48,8 +50,10 @@
 % define left- and right-aligned paragraph column for use below
 \newcolumntype{R}[1]
   {>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-\newcolumntype{L}
-    {>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
+\newcolumntype{L}[1]
+  {>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{T}
+  {>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
 
 % verse number
 \newcounter{VerseCounter}
@@ -58,7 +62,7 @@
 \newenvironment{psalmtext}[1][1]
 {
   \setcounter{VerseCounter}{#1} % number of first verse
-  \begin{tabu} to \textwidth {R{\notesamount} R{\versenumamount} L}
+  \begin{tabu} to \textwidth {L{\notesamount} @{\hspace{2pt}} R{\versenumamount} @{\hspace{24pt}} T}
 }
 {
   \end{tabu}
@@ -140,7 +144,7 @@
   \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
 
 % break a long line and indent appropriately
-  \newcommand{\breaklongline}{\newline&&\hbox{}\hspace{2\indentamount}}
+\newcommand{\nextline}[1][]{\newline\dyn{#1}&&\hbox{}\hspace{2\indentamount}}
 
 % gap to signify a new section of the psalm
 \newcommand{\stanzagap}{\vspace{\stanzagapamount}\\[-12pt]}
