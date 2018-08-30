@@ -165,7 +165,7 @@
 
 \newcommand{\gloria}[1]{
   \begin{flushright}
-    \dyn{#1}\hspace{\indentamount}\textbf{Gloria}\\
+    \dyn{#1}\hspace{4pt}\textbf{Gloria}\\
   \end{flushright}
 }
 
