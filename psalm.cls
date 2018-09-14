@@ -7,7 +7,7 @@
 
 \RequirePackage{array}
 \RequirePackage{textcomp}
-\RequirePackage[top=2cm,bottom=2cm,left=1.5cm,right=1.5cm]{geometry}
+\RequirePackage[top=2cm,bottom=1.9cm,left=1.5cm,right=1.5cm]{geometry}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{libertine}
 \RequirePackage{graphicx}
@@ -123,11 +123,11 @@
 % dynamics | daggers | verse numbers | verse text
 
 % normal verse
-\newcommand{\vs}[4]{\dyn{#1} & \theVerseCounter.\stepcounter{VerseCounter} & #2 \\
+\newcommand{\vs}[4]{\dyn{#1} & \theVerseCounter\stepcounter{VerseCounter} & #2 \\
   \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
 
 % full verse
-\newcommand{\vsf}[4]{\dyn{#1} & \underline{\theVerseCounter}.\stepcounter{VerseCounter} & #2 \\
+\newcommand{\vsf}[4]{\dyn{#1} & \underline{\theVerseCounter}\stepcounter{VerseCounter} & #2 \\
   \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
 
 % verse without verse number e.g. Gloria
@@ -135,11 +135,11 @@
   \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
 
 % normal verse second half
-\newcommand{\vsd}[4]{\dyn{#1} & \second\theVerseCounter.\stepcounter{VerseCounter} & #2 \\
+\newcommand{\vsd}[4]{\dyn{#1} & \second\theVerseCounter\stepcounter{VerseCounter} & #2 \\
   \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
 
 % full verse second half
-\newcommand{\vsfd}[4]{\dyn{#1} & \second\underline{\theVerseCounter}.\stepcounter{VerseCounter} & #2 \\
+\newcommand{\vsfd}[4]{\dyn{#1} & \second\underline{\theVerseCounter}\stepcounter{VerseCounter} & #2 \\
   \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
 
 % verse second half without verse number e.g. Gloria
