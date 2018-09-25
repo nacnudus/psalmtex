@@ -130,10 +130,6 @@
 \newcommand{\vsf}[4]{\dyn{#1} & \underline{\theVerseCounter}\stepcounter{VerseCounter} & #2 \\
   \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
 
-% verse without verse number e.g. Gloria
-\newcommand{\vsn}[4]{\dyn{#1} & & #2 \\
-  \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
-
 % normal verse second half
 \newcommand{\vsd}[4]{\dyn{#1} & \second\theVerseCounter\stepcounter{VerseCounter} & #2 \\
   \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
@@ -142,9 +138,21 @@
 \newcommand{\vsfd}[4]{\dyn{#1} & \second\underline{\theVerseCounter}\stepcounter{VerseCounter} & #2 \\
   \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
 
-% verse second half without verse number e.g. Gloria
-\newcommand{\vsnd}[4]{\dyn{#1} & \second & #2 \\
-  \dyn{#3} & &\hspace{\indentamount}#4\\[\versesepamount]}
+% normal verse with manual verse number e.g. Gloria
+\newcommand{\vsn}[5]{\dyn{#2} & #1 & #3 \\
+  \dyn{#4} & &\hspace{\indentamount}#5\\[\versesepamount]}
+
+% normal verse second half with manual verse number e.g. Gloria
+\newcommand{\vsnd}[5]{\dyn{#2} & \second#1 & #3 \\
+  \dyn{#4} & &\hspace{\indentamount}#5\\[\versesepamount]}
+
+% full verse with manual verse number e.g. Gloria
+\newcommand{\vsfn}[5]{\dyn{#2} & \underline{#1} & #3 \\
+  \dyn{#4} & &\hspace{\indentamount}#5\\[\versesepamount]}
+
+% full verse second half with manual verse number e.g. Gloria
+\newcommand{\vsfnd}[5]{\dyn{#2} & \second\underline{#1} & #3 \\
+  \dyn{#4} & &\hspace{\indentamount}#5\\[\versesepamount]}
 
 % break a long line and indent appropriately
 \newcommand{\nextline}[1][]{\newline\dyn{#1}&&\hbox{}\hspace{2\indentamount}}
@@ -157,9 +165,9 @@
 
 \newcommand{\gloriafull}[1]{
   \gloriagap
-  \vsn{#1}{Glory | be_to the | Father \q}
+  \vsn{}{#1}{Glory | be_to the | Father \q}
   {}{And to the Son | and_to the | Holy | Ghost;}
-  \vsn{}{As it was in the beginning is now and | ever | shall || be world with_out end A- | men.}
+  \vsn{}{}{As it was in the beginning is now and | ever | shall || be world with_out end A- | men.}
   {}{}
 }
 
