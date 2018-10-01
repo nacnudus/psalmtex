@@ -177,3 +177,8 @@
   \end{flushright}
 }
 
+\newcommand{\changechant}{
+  \begin{flushright}
+    \textbf{\textit{change chant}}\\
+  \end{flushright}
+}
